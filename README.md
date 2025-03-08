@@ -1,29 +1,36 @@
-Architecting Jenkins Pipeline for Scale
-Course-end Project 1
+Building a CI/CD Pipeline with Jenkins
+Course-end Project 2
 Description
 
-Use Jenkins to set up a distributed pipeline that will compile and test a Maven project on two different slave nodes respectively.
+Use Jenkins to set up a CI/CD pipeline that will compile and test a Maven project and deploy it to a Tomcat Server.
 
  
 
 Background of the problem statement:
 
-You’re a DevOps engineer at Softmax Solutions, a software company that develops image filters for various photo enhancement apps. It is undergoing an infrastructural change to implement DevOps in its development process. The company uses git as their Source Code Management System and AWS for hosting its servers. You’re required to architect a scalable Jenkins Pipeline for building and testing the software stack. You’re tasked with designing a Jenkins architecture that involves one master and two slave nodes, all hosted on various AWS instances. The build jobs should always be triggered by the master and executed on the slaves. You have to set up a pipeline on the master node and write a Groovy script that clearly differentiates the tasks to be run on various slaves.
+You’re a DevOps engineer at Pied Piper, a software company that provides web and mobile app development services. Your team is tasked with building a web app for an online book shop named Bookzy. The developers have decided to use Springboot to generate the project, Maven for compilation, and Git as the Source Code Management system for the project. You’re required to set up a Jenkins pipeline that involves three different freestyle jobs for code compilation, testing, and deployment respectively. Your Pipeline has to poll the SCM nightly for commits, build the project, and trigger the test job if the build is stable. The test job has to run unit tests, publish the JUnit test report, and trigger the freestyle job for deployment. The deployment job is required to package the Maven project, deploy the war file to a Tomcat server, and notify you via email if deployment failed.
 
  
 
 You must use the following:
 
-Git: As a version control system for the software
+Java: To create the website
+Git: As a version control system for the program
 Jenkins: To create the build pipeline
 Spring boot: To create the Maven app
 Maven: To compile the program
-AWS EC2: To run the master and slave nodes
+Tomcat: To host the website
+AWS EC2: To run Tomcat
+JUnit: To run tests and publish results
  
 
 The following requirements should be met:
 
 The app should be built with Maven.
-There should be three EC2 instances to run the master and two slave nodes.
-All builds should be triggered and monitored by the master node.
-Compilation and testing should be done on dedicated slave nodes.
+The Tomcat server should allow remote deployment.
+The pipeline should consist of three freestyle jobs for compilation, test, and deployment respectively.
+ 
+
+Prerequisite:
+
+To create the Maven project, go to ​start.​spring.​io/​ and select Maven as the project type. Enter Group and Artifact values and click on Generate.
